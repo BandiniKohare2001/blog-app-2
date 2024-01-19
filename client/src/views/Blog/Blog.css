@@ -23,6 +23,7 @@
 .edit{
     display: flex;
     right: 1px;
+    font-weight: 100;
     top: -10px;
     position: absolute;
 }

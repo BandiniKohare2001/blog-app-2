@@ -31,10 +31,9 @@
   }
   .nav-btn:hover {
     /* border-bottom: 3px solid black; */
-    color: rgb(14, 149, 238);
-   
-   
-    border-radius: 5px;
+    color: white;
+    background-color: tomato;
+    border-radius: 50px;
   }
  
   .user{
