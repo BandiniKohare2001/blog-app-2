@@ -7,14 +7,14 @@ import Footer from "../../components/Footer/Footer";
 
 export default function Blog() {
     const [Blogs, setBlog] = useState([]);
-   
+
     const [user, setUser] = useState({});
 
-   
+
     const loadBlog = async () => {
         const response = await axios.get("/api/blogs");
         const blogdata = response?.data?.data;
-     
+
         console.log(blogdata);
         setBlog(blogdata);
     };
@@ -23,17 +23,17 @@ export default function Blog() {
         loadBlog();
     }, []);
 
-    const deleteBlog = async(id)=>{
+    const deleteBlog = async (id) => {
         const response = await axios.delete(`/api/blogs/${id}`);
-    
-        if(response?.data?.success){
-          showToast(response?.data?.message,'denger','3000');
-          loadBlog();
+
+        if (response?.data?.success) {
+            showToast(response?.data?.message, 'denger', '3000');
+            loadBlog();
         }
-      }
-      const updateBlog = async(id)=>{
-        window.location.href=`/updateBlog/${id}`
-      }
+    }
+    const updateBlog = async (id) => {
+        window.location.href = `/updateBlog/${id}`
+    }
 
 
 
@@ -54,45 +54,45 @@ export default function Blog() {
 
             <div>
                 <Navbar />
-               
-                <div className="blog-history-table">
-                 
-                    {
 
-Blogs?.map((blog, index) => {
-                            const { _id, title, description
-                            } = blog;
+              <div>
+              <div className="blog-history-table">
 
-                            return (
+{
 
-                                <div key={index} className="blog-row">
-                                        <div className="date">
-                                            {title}
-                                        </div>
-                                        
-                                     
+    Blogs?.map((blog, index) => {
+        const { _id, title, description
+        } = blog;
 
-                                    <div className="date">{description}</div>
+        return (
 
-                                    <div className="edit">
-                                    <p className='edit-icon'
-                                            onClick={() => {
-                                                updateBlog(_id)
-                                            }}
-                                        >Edit </p>
-                                         <p className='delete-icon' onClick={() => { deleteBlog(_id) }} >Delete</p>
-                                    </div>
-                                      </div>
-                              
-
-
-                            )
-                        }
-                        )
-                    }
+            <div key={index} className="blog-row">
+                <div className="title">
+                    {title}
                 </div>
+
+
+
+                <div className="date">{description} ............... Read more</div>
+
+                <div className="edit">
+                    <p className='edit-icon'
+                        onClick={() => {
+                            updateBlog(_id)
+                        }}
+                    >Edit </p>
+                    <p className='delete-icon' onClick={() => { deleteBlog(_id) }} >Delete</p>
+                </div>
+            </div>
+
+        )
+    }
+    )
+}
+</div>
+              </div>
             </div >
-            <Footer/>
+            <Footer />
         </>
     )
 }
