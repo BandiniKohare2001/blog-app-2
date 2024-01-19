@@ -1,0 +1,45 @@
+.blog-history-table{
+    /* box-shadow: 0 0 10px 1px gray; */
+    height: auto;
+   margin: 50px;
+ padding: 20px;
+   background-color: white;
+}
+.blog-row{
+    box-shadow: 0 0 1px 0.6px gray;
+   position: relative;
+    border: none;
+    width: 40%;
+    padding: 10px;
+    
+  
+}
+.edit{
+    display: flex;
+    right: 1px;
+    top: -10px;
+    position: absolute;
+}
+.edit-icon{
+    margin-left: 10px;
+  cursor: pointer;
+  color: green;
+   
+}
+
+.delete-icon{
+    margin-left: 10px;
+  cursor: pointer;
+  color: red;
+     /*  position: absolute; */
+
+    /* top: 20px; */
+}
+
+/* .dalete{
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    
+    top: 20px;  
+} */
