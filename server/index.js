@@ -41,7 +41,7 @@ app.put('/api/blogs/:id', editTransation)
 app.get('/api/blogs/:id', displayedit)
 
 
-const PORT = 5000;
+const PORT = 8000;
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
